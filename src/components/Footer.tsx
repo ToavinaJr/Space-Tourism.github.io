@@ -1,6 +1,14 @@
 const Footer = () => {
   return (
-    <div>Footer</div>
+    <footer
+      className="
+        text-center
+        text-white
+        mt-24
+      "
+    >
+      Toavina JR
+    </footer>
   )
 }
 

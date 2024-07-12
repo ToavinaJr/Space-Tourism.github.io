@@ -1,88 +1,88 @@
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+
 const Header = () => {
     const linksData = [
-      {
-        id: "00",
-        link: "HOME",
-      },
-      {
-        id: "01",
-        link: "DESTINATION",
-      },
-      {
-        id: "02",
-        link: "CREW",
-      },
-      {
-        id: "01",
-        link: "TECHNOLOGY",
-      },
+        {
+            id: "00",
+            link: "HOME",
+            path: "/",
+        },
+        {
+            id: "01",
+            link: "DESTINATION",
+            path: "/destination",
+        },
+        {
+            id: "02",
+            link: "CREW",
+            path: "/crew",
+        },
+        {
+            id: "03",
+            link: "TECHNOLOGY",
+            path: "/Technology",
+        },
     ];
 
     return (
         <header
-          className="
+            className="
             w-full
             p-5
-            flex justify-between
+            pr-0
+            flex justify-between items-center
             text-white
           "
         >
-          <div>
-              <img src="/public/assets/shared/logo.svg" alt="" />
-          </div>
-          <ul
-            className="
+            <div>
+                <img src="/assets/shared/logo.svg" alt="" />
+            </div>
+            <ul
+                className="
               p-5
+              px-[6rem]
               hidden
               md:flex
               flex-row
               gap-10
               backdrop-blur-3xl
             "
-          >
-              {linksData.map((linkData, index) => (
-                  <li
-                    key={index}
-                    className="
+            >
+                {linksData.map((linkData, index) => (
+                    <li
+                        key={index}
+                        className="
                     flex gap-3
                     "
-                  >
-                      <span
-                        className="
+                    >
+                        <span
+                            className="
                           text-white
                         "
-                      >
-                          {linkData.id}
-                      </span>
-                      <a
-                        className="
-                          hover:underline
-                          transition
-                        "
-                        href=""
-                      >
-                          {linkData.link}
-                      </a>
-                  </li>
-              ))}
-          </ul>
-          <div
-              className="
+                        >
+                            {linkData.id}
+                        </span>
+                            <Link to={linkData.path}>{linkData.link}</Link>
+                    </li>
+                ))}
+            </ul>
+            <div
+                className="
                 flex
                 md:hidden
                 absolute
                 right-[2rem]
                 top-[2rem]
           "
-          >
-              <img
-                src="/public/assets/icon-hamburger.svg"
-                alt="Burger Icon"
-                className="
+            >
+                <img
+                    src="/assets/icon-hamburger.svg"
+                    alt="Burger Icon"
+                    className="
                   hover:cursor-pointer
                 "
-              />
-          </div>
+                />
+            </div>
         </header>
     );
 };

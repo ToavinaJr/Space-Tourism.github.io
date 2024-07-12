@@ -14,6 +14,7 @@ const HeroExplorer = () => {
                 rounded-full
                 flex justify-center items-center
                 cursor-pointer
+                hover:bg-[#c6ebf1]
             "
     >
         EXPLORE

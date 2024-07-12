@@ -2,7 +2,7 @@ const HeroText = () => {
   return (
     <section
         className="
-            w-screen md:w-1/2
+         md:w-1/2
         "
     >
         <div

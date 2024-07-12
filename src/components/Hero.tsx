@@ -8,8 +8,8 @@ const Hero = () => {
                 flex items-center justify-between
                 flex-col md:flex-row
                 w-full
-                mt-4 mx-6 md:mx-0 md:mt-20
-                px-20
+                mt-4 md:mx-0 md:mt-20
+                
             "
         >
             <HeroText />

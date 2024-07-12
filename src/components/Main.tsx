@@ -5,7 +5,7 @@ const Main = () => {
       className="
         my-4
         w-full
-        flex
+        flex px-10 md:px-20
       "
     >
       <Hero/>

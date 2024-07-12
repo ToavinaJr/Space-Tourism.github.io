@@ -3,7 +3,18 @@
 @tailwind utilities;
 
 body{
-    background-image: url('/public/assets/home/background-home-desktop.jpg');
+    background-image: url('/assets/home/background-home-desktop.jpg');
     width: 100vw;
     height: 100vh;
+}
+
+@media screen and (max-width: 640px) {
+    body {
+        background-image: url('/assets/home/background-home-mobile.jpg');
+        background-repeat: repeat-y;
+        background-size: 100% 100%;
+        background-position: center;
+        width: 100vw;
+        height: 100vh;
+    }
 }
