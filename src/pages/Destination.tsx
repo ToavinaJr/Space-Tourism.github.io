@@ -32,14 +32,14 @@ const Destination = () => {
     ]
     
     const changeIndex = (index : number ) => {
-        
         setIndice(index)
-        console.log(indice);
-        
+        // console.log(indice);
     }
 
     return (
-        <div id="destination">
+        <div 
+            id="destination"
+        >
             <Header />
             <main
                 className="
@@ -90,7 +90,7 @@ const Destination = () => {
                             <li 
                                 key={index}
                                 className={`
-                                    hover:text-zinc-400 text-2xl lg:text-4xl font-bold mb-5 cursor-pointer ${index == indice ? "underline" : ""}
+                                    hover:text-zinc-400 text-2xl lg:text-4xl font-bold mb-5 cursor-pointer ${index == indice ? "underline text-white" : "text-zinc-500"}
                                 `}                      
                                 onClick={
                                     () => { 
@@ -136,14 +136,14 @@ const Destination = () => {
                         >
                             <div
                                 className="
-                                    text-xl
+                                    text-xl text-zinc-400
                                 "
                             >
                                 AVG DISTANCE
                             </div>
                             <div
                                 className="
-                                text-zinc-400
+                                text-3xl
                                 "
                             >
                                 {distances[indice]}
@@ -153,14 +153,14 @@ const Destination = () => {
                         <div>
                             <div
                                 className="
-                                    text-xl
+                                    text-xl text-zinc-400
                                 "
                             >
-                                TRAVEL
+                                EST. TRAVEL TIME
                             </div>
                             <div
                                 className="
-                                    text-xl text-zinc-400
+                                    text-3xl 
                                 "
                             >
                                 {travels[indice]}
