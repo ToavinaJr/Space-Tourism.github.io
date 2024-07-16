@@ -1,8 +1,11 @@
 import Header from "../components/Header"
+import '../styles/Technology.css'
 
 const Technology = () => {
   return (
-    <div>
+    <div
+        id="technology"
+    >
         <Header />
     </div>
   )
