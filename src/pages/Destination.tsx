@@ -44,7 +44,7 @@ const Destination = () => {
             <main
                 className="
                 flex flex-col justify-center lg:flex-row
-                p-2 lg:px-40 gap-3
+                p-2 lg:px-32 gap-3
                 text-white
                 w-full
             "
@@ -57,18 +57,18 @@ const Destination = () => {
                 >
                     <h1
                         className="
-                            text-xl lg:text-4xl
+                            text-2xl lg:text-4xl
                             text-white font-bold mb-5                            
                         "
                     >
-                        PICK YOUR DESTINATION
+                        <span className="text-zinc-500">01 </span>PICK YOUR DESTINATION
                     </h1>
 
                     <img
                         src={images[indice]}
                         alt=""
                         className="
-                            w-84 lg:w-[20rem]
+                            w-84 md:w-72 lg:w-[20rem]
                             h-auto   
                         "
                     />
@@ -90,7 +90,7 @@ const Destination = () => {
                             <li 
                                 key={index}
                                 className={`
-                                    text-4xl font-bold mb-5 cursor-pointer ${index == indice ? "underline" : ""}
+                                    hover:text-zinc-400 text-2xl lg:text-4xl font-bold mb-5 cursor-pointer ${index == indice ? "underline" : ""}
                                 `}                      
                                 onClick={
                                     () => { 
@@ -104,37 +104,67 @@ const Destination = () => {
                     
                     <div
                         className="
-                            text-9xl mb-5
+                            text-6xl lg:text-9xl mb-5
                         "
                     >
                         {destinations[indice]}
                     </div>
                     <div
                         className="
-                            mb-10
+                            mb-5  text-zinc-400
                         "
                     >
                         {descriptions[indice]}
                     </div>
-
+                    
+                    <hr 
+                        className="
+                            w-full border-zinc-300
+                            m-5 ml-0
+                        "
+                    />
                     <div
                         className="
-                            flex flex-col lg:flex-row mb-10
-                            gap-10
+                            flex flex-col lg:flex-row mb-10 bord
+                            gap-5 lg:gap-10
                         "
                     >
                         <div
                             className="
-                                mb-4
+                                mb-5
                             "
                         >
-                            <div>AVG DISTANCE</div>
-                            <div>{distances[indice]}</div>
+                            <div
+                                className="
+                                    text-xl
+                                "
+                            >
+                                AVG DISTANCE
+                            </div>
+                            <div
+                                className="
+                                text-zinc-400
+                                "
+                            >
+                                {distances[indice]}
+                            </div>
                         </div>
 
                         <div>
-                            <div>TRAVEL</div>
-                            <div>{travels[indice]}</div>
+                            <div
+                                className="
+                                    text-xl
+                                "
+                            >
+                                TRAVEL
+                            </div>
+                            <div
+                                className="
+                                    text-xl text-zinc-400
+                                "
+                            >
+                                {travels[indice]}
+                            </div>
                         </div>
                     </div>
                 </section>

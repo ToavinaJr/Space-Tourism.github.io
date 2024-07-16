@@ -1,5 +1,6 @@
 import Header from "../components/Header"
 import '../styles/Crew.css'
+
 const Crew = () => {
   return (
     <div
