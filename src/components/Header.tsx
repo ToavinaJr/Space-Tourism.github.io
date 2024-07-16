@@ -1,6 +1,16 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import { disablePageScroll, enablePageScroll } from "scroll-lock";
 
 const Header = () => {
+    const [ openMenu, setOpenMenu ]  = useState(false);
+    const [ icon , setIcon ] = useState("/assets/icon-hamburger.svg")
+    const handleMenu = () => {
+        setOpenMenu(!openMenu);
+        !openMenu ? disablePageScroll() : enablePageScroll();
+        icon === "/assets/icon-hamburger.svg"? setIcon("/assets/icon-close.svg") : setIcon("/assets/icon-hamburger.svg")
+    }
+
     const linksData = [
         {
             id: "00",
@@ -31,7 +41,7 @@ const Header = () => {
             p-5
             pr-0
             flex justify-between items-center
-            text-white
+            text-white text-xl
           "
         >
             <div>
@@ -63,7 +73,11 @@ const Header = () => {
                         >
                             {linkData.id}
                         </span>
-                            <Link to={linkData.path}>{linkData.link}</Link>
+                        <Link 
+                            to={linkData.path}
+                        >
+                            {linkData.link}
+                        </Link>
                     </li>
                 ))}
             </ul>
@@ -77,13 +91,44 @@ const Header = () => {
           "
             >
                 <img
-                    src="/assets/icon-hamburger.svg"
+                    src={icon}
                     alt="Burger Icon"
                     className="
-                  hover:cursor-pointer
-                "
+                        hover:cursor-pointer
+                        z-30
+                    "
+                    onClick={handleMenu}
                 />
             </div>
+
+            {openMenu && <ul
+                className="
+                    absolute
+                    flex md:hidden flex-col justify-center items-center gap-5
+                    w-screen
+                    h-screen
+                    bg-[#0d0d1a]
+                    top-0 left-0
+                    z-20
+                "
+            >
+                {linksData.map((linkData, index) => (
+                    <li
+                        key={index}
+                        className="
+                            flex gap-3
+                            text-left
+                        "
+                    >
+                        <Link 
+                            to={linkData.path}
+                            onClick={handleMenu}           
+                        >
+                                {linkData.link}
+                        </Link>
+                    </li>
+                ))}
+            </ul>}
         </header>
     );
 };

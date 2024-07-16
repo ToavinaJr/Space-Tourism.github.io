@@ -24,7 +24,7 @@ const Crew = () => {
 
   const indices = [0, 1, 2, 3]
 
-  const changeIndex = (index) => {
+  const changeIndex = (index : number) => {
     setIndice(index)
   }
   return (
@@ -35,6 +35,7 @@ const Crew = () => {
             relative
         "
     >
+
         <Header />
         <main
           className="
@@ -48,10 +49,10 @@ const Crew = () => {
           >
             <h1
               className="
-                text-2xl mb-10
+                text-3xl mb-10
               "
             > 
-              <span>02</span> MEET YOUR CREEW 
+              <span className="text-slate-500">02</span> MEET YOUR CREEW 
             </h1>
             <div
               className="
@@ -63,7 +64,7 @@ const Crew = () => {
 
             <div
               className="
-                text-6xl mb-10
+                text-4xl lg:text-6xl mb-10
               "
             >
               {names[indice]}
@@ -109,7 +110,7 @@ const Crew = () => {
               src={images[indice]}
               alt="" 
               className="
-                w-[20rem] h-auto
+                w-[20rem] h-auto mb-5
               "
             />
           </section>      
@@ -117,7 +118,7 @@ const Crew = () => {
 
         <div
           className="
-            fixed flex gap-4 left-8 bottom-4 lg:left-40 lg:bottom-12
+            z-10 fixed flex gap-4 left-8 bottom-4 lg:left-40 lg:bottom-12
           "
         >
         {

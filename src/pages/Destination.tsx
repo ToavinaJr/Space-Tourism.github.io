@@ -94,7 +94,7 @@ const Destination = () => {
                                 `}                      
                                 onClick={
                                     () => { 
-                                    changeIndex(parseInt(index))
+                                    changeIndex(index)
                                     
                                 }}
                             >

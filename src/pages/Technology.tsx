@@ -27,9 +27,10 @@ const Technology = () => {
         id="technology"
     >
         <Header />
+
         <h1
           className="
-            text-white text-3xl p-4 lg:px-10
+            text-white text-3xl py-4 px-4 lg:px-5
           "
         >
           <span className="text-slate-500">03</span> SPACE LAUNCH 101
